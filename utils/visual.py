@@ -26,8 +26,9 @@ def watch_pic_kp(dataset, pic, kp):
         cv2.circle(
             pic,
             (int(kp[2*kp_index]), int(kp[2*kp_index+1])),
-            1,
-            (0, 0, 255)
+            2,
+            (0, 0, 255),
+            -1
         )
     show_img(pic)
 

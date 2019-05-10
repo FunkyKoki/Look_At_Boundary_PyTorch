@@ -7,11 +7,12 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import spline
 
 
-def show_img(pic, name='pic', x=0, y=0, wait=0):
+def show_img(pic, name='pic', x=0, y=0, wait=0, keep=False):
     cv2.imshow(name, pic)
     cv2.moveWindow(name, x, y)
-    cv2.waitKey(wait)
-    cv2.destroyAllWindows()
+    if keep is False:
+        cv2.waitKey(wait)
+        cv2.destroyAllWindows()
 
 
 def watch_gray_heatmap(gt_heatmap):

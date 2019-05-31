@@ -29,7 +29,7 @@ regressor.eval()
 print('Loading network done!\nStart testing ...')
 
 # detect face and facial landmark
-rescale_ratio = 0.1/2
+rescale_ratio = 0.2/2
 cv2.namedWindow("Face Detector")
 cap = cv2.VideoCapture(0)
 face_keypoint_coords = []
@@ -150,4 +150,3 @@ if os.path.exists('hm.png'):
     os.remove('hm.png')
 cap.release()              # 关闭摄像头
 cv2.destroyAllWindows()
-

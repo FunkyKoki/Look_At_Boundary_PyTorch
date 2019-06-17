@@ -5,7 +5,7 @@ parser = argparse.ArgumentParser(description='LAB')
 # dataset
 parser.add_argument('--dataset_route', default='/home/jin/new_datasets/', type=str)
 parser.add_argument('--dataset',       default='WFLW',              type=str)
-parser.add_argument('--split',         default='pose',             type=str)
+parser.add_argument('--split',         default='test',             type=str)
 
 # dataloader
 parser.add_argument('--crop_size',     default=256,                 type=int)
@@ -54,12 +54,12 @@ parser.add_argument('--theta',         default=1.5,                 type=float)
 parser.add_argument('--delta',         default=0.8,                 type=float)
 
 # evaluate parameters
-parser.add_argument('--eval_epoch',    default=900,                 type=int)
+parser.add_argument('--eval_epoch',    default=750,                 type=int)
 parser.add_argument('--max_threshold', default=0.1,                 type=float)
 parser.add_argument('--norm_way',      default='inter_ocular',      type=str,
                     choices=['inter_pupil', 'inter_ocular', 'face_size'])
-parser.add_argument('--eval_visual',   default=True,               type=bool)
-parser.add_argument('--save_img',      default=True,                type=bool)
+parser.add_argument('--eval_visual',   default=False,               type=bool)
+parser.add_argument('--save_img',      default=False,                type=bool)
 
 args = parser.parse_args()
 

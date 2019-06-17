@@ -186,3 +186,12 @@ l_eye_center_index_x = {'300W': [72, 74, 76, 78, 80, 82], 'AFLW': 22, 'COFW': 54
 l_eye_center_index_y = {'300W': [73, 75, 77, 79, 81, 83], 'AFLW': 23, 'COFW': 55, 'WFLW': 193}
 r_eye_center_index_x = {'300W': [84, 86, 88, 90, 92, 94], 'AFLW': 28, 'COFW': 56, 'WFLW': 194}
 r_eye_center_index_y = {'300W': [85, 87, 89, 91, 93, 95], 'AFLW': 29, 'COFW': 57, 'WFLW': 195}
+
+nparts = {  # [chin, brow, nose, eyes, mouth], totally 5 parts
+    '300W': [
+        [0, 17], [17, 27], [27, 36], [36, 48], [48, 68]
+    ],
+    'WFLW': [
+        [0, 33], [33, 51], [51, 60],  [60, 76], [76, 96]
+    ]
+}

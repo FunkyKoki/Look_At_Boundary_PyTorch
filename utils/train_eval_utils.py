@@ -135,6 +135,16 @@ def calc_error_rate_i(dataset, pred_coords, gt_coords_xy, error_normalize_factor
     return error/kp_num[dataset]/error_normalize_factor
 
 
+def calc_error_rate_i_nparts(dataset, pred_coords, gt_coords_xy, error_normalize_factor):
+    assert dataset in nparts.keys()
+    temp, error = (pred_coords - gt_coords_xy)**2, [0., 0., 0., 0., 0.]
+    for i in range(len(nparts[dataset])):
+        for j in range(nparts[dataset][i][0], nparts[dataset][i][1]):
+            error[i] += np.sqrt(temp[2*j] + temp[2*j+1])
+        error[i] = error[i]/(nparts[dataset][i][1] - nparts[dataset][i][0])/error_normalize_factor
+    return error
+
+
 def calc_auc(dataset, split, error_rate, max_threshold):
     error_rate = np.array(error_rate)
     threshold = np.linspace(0, max_threshold, num=2000)
